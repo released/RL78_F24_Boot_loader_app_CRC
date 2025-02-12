@@ -2,101 +2,127 @@
 ;fsymbol = .constf, .text, .textf, .bss, .sbss, .data, .sdata, .RLIB, .SLIB
 
 ;SECTION NAME = .constf
+ .public _device_auth_status_ok
+_device_auth_status_ok .equ 0x00002c16
+ .public _device_inquiry_data_status_ok
+_device_inquiry_data_status_ok .equ 0x00002c1d
+ .public _device_memory_erase_status_ok
+_device_memory_erase_status_ok .equ 0x00002c24
+ .public _device_memory_write_status_ok
+_device_memory_write_status_ok .equ 0x00002c2b
+ .public _device_memory_read_status_ok
+_device_memory_read_status_ok .equ 0x00002c32
+ .public _device_memory_read_packet_error
+_device_memory_read_packet_error .equ 0x00002c39
+ .public _device_memory_read_checksum_error
+_device_memory_read_checksum_error .equ 0x00002c40
+ .public _device_memory_switch_app_ok
+_device_memory_switch_app_ok .equ 0x00002c47
+ .public _device_part_number
+_device_part_number .equ 0x00002c4e
  .public _table
-_table .equ 0x00002236
+_table .equ 0x0000316a
 ;SECTION NAME = .text
+ .public _boot_r_Config_IICA0_interrupt
+_boot_r_Config_IICA0_interrupt .equ 0x0000023a
+ .public _I2C_Downloader_routine_IRQ
+_I2C_Downloader_routine_IRQ .equ 0x00000283
  .public _boot_r_Config_TAU0_1_interrupt
-_boot_r_Config_TAU0_1_interrupt .equ 0x0000023a
+_boot_r_Config_TAU0_1_interrupt .equ 0x000003e1
  .public _delay_wait
-_delay_wait .equ 0x00000274
+_delay_wait .equ 0x0000041b
 ;SECTION NAME = .textf
  .public _ErrorHandler
-_ErrorHandler .equ 0x000009c8
+_ErrorHandler .equ 0x00000b6f
+ .public _boot_R_Config_IICA0_Create
+_boot_R_Config_IICA0_Create .equ 0x00001889
+ .public _boot_R_Config_IICA0_Stop
+_boot_R_Config_IICA0_Stop .equ 0x000018ee
  .public _verify_application_chksum
-_verify_application_chksum .equ 0x00000a9e
+_verify_application_chksum .equ 0x000018f3
  .public _condition_check
-_condition_check .equ 0x00000b63
+_condition_check .equ 0x000019b8
  .public _boot_UART1_Get_withTimeOut
-_boot_UART1_Get_withTimeOut .equ 0x00000bea
+_boot_UART1_Get_withTimeOut .equ 0x00001a3f
  .public _boot_UART1_Get
-_boot_UART1_Get .equ 0x00000c6b
+_boot_UART1_Get .equ 0x00001ac0
  .public _boot_UART1_SendByte
-_boot_UART1_SendByte .equ 0x00000c85
- .public _boot_R_Config_UART1_Create
-_boot_R_Config_UART1_Create .equ 0x00000c99
- .public _boot_R_Config_UART1_Start
-_boot_R_Config_UART1_Start .equ 0x00000d27
- .public _boot_R_Config_UART1_Stop
-_boot_R_Config_UART1_Stop .equ 0x00000d49
- .public _boot_R_SAU1_Create
-_boot_R_SAU1_Create .equ 0x00000d68
+_boot_UART1_SendByte .equ 0x00001ada
  .public _boot_R_Config_UART0_Create
-_boot_R_Config_UART0_Create .equ 0x00000d70
+_boot_R_Config_UART0_Create .equ 0x00001aee
  .public _boot_R_Config_UART0_Start
-_boot_R_Config_UART0_Start .equ 0x00000df7
+_boot_R_Config_UART0_Start .equ 0x00001b75
  .public _boot_R_Config_UART0_Stop
-_boot_R_Config_UART0_Stop .equ 0x00000e1f
+_boot_R_Config_UART0_Stop .equ 0x00001b9d
  .public _boot_R_SAU0_Create
-_boot_R_SAU0_Create .equ 0x00000e3e
+_boot_R_SAU0_Create .equ 0x00001bbc
  .public _boot_set_TimeoutFlag
-_boot_set_TimeoutFlag .equ 0x00000e46
+_boot_set_TimeoutFlag .equ 0x00001bc4
  .public _boot_get_TimeoutFlag
-_boot_get_TimeoutFlag .equ 0x00000e4e
+_boot_get_TimeoutFlag .equ 0x00001bcc
  .public _boot_check_Timeout
-_boot_check_Timeout .equ 0x00000e56
+_boot_check_Timeout .equ 0x00001bd4
  .public _boot_get_tick
-_boot_get_tick .equ 0x00000e92
+_boot_get_tick .equ 0x00001c10
  .public _boot_Timer_1ms_IRQ
-_boot_Timer_1ms_IRQ .equ 0x00000ea4
+_boot_Timer_1ms_IRQ .equ 0x00001c22
  .public _boot_R_Config_TAU0_1_Stop
-_boot_R_Config_TAU0_1_Stop .equ 0x00000eef
+_boot_R_Config_TAU0_1_Stop .equ 0x00001c6d
  .public _boot_R_Config_TAU0_1_Start
-_boot_R_Config_TAU0_1_Start .equ 0x00000eff
+_boot_R_Config_TAU0_1_Start .equ 0x00001c7d
  .public _boot_R_Config_TAU0_1_Create
-_boot_R_Config_TAU0_1_Create .equ 0x00000f0f
+_boot_R_Config_TAU0_1_Create .equ 0x00001c8d
  .public _boot_R_Config_TAU0_0_Stop
-_boot_R_Config_TAU0_0_Stop .equ 0x00000f5c
+_boot_R_Config_TAU0_0_Stop .equ 0x00001cda
  .public _boot_R_Config_TAU0_0_Start
-_boot_R_Config_TAU0_0_Start .equ 0x00000f66
+_boot_R_Config_TAU0_0_Start .equ 0x00001ce4
  .public _boot_R_Config_TAU0_0_Create
-_boot_R_Config_TAU0_0_Create .equ 0x00000f70
+_boot_R_Config_TAU0_0_Create .equ 0x00001cee
  .public _boot_R_TAU0_Create
-_boot_R_TAU0_Create .equ 0x00000f9f
+_boot_R_TAU0_Create .equ 0x00001d1d
  .public _boot_R_Config_PORT_Create
-_boot_R_Config_PORT_Create .equ 0x00000faa
+_boot_R_Config_PORT_Create .equ 0x00001d28
  .public _boot_mcu_clock_setup
-_boot_mcu_clock_setup .equ 0x00000fab
+_boot_mcu_clock_setup .equ 0x00001d29
  .public _boot_bsp_init_system
-_boot_bsp_init_system .equ 0x0000100f
+_boot_bsp_init_system .equ 0x00001d8d
  .public _putchar
-_putchar .equ 0x00001032
+_putchar .equ 0x00001db0
  .public _boot_hdwinit
-_boot_hdwinit .equ 0x0000104c
+_boot_hdwinit .equ 0x00001dca
  .public _check_reset_source
-_check_reset_source .equ 0x0000107a
+_check_reset_source .equ 0x00001df5
  .public _boot_ram_flag_test
-_boot_ram_flag_test .equ 0x00001165
+_boot_ram_flag_test .equ 0x00001ee0
  .public _boot_main
-_boot_main .equ 0x00001216
+_boot_main .equ 0x00001f91
  .public _UPDC32
-_UPDC32 .equ 0x000013b9
+_UPDC32 .equ 0x00002270
  .public _caculate_crc32_checksum
-_caculate_crc32_checksum .equ 0x0000140f
+_caculate_crc32_checksum .equ 0x000022c6
  .public _XMD_Write
-_XMD_Write .equ 0x000014fa
+_XMD_Write .equ 0x000023b1
  .public _XMD_putc
-_XMD_putc .equ 0x0000156a
+_XMD_putc .equ 0x00002421
  .public _XMD_getc
-_XMD_getc .equ 0x00001575
+_XMD_getc .equ 0x0000242c
  .public _crc16_ccitt
-_crc16_ccitt .equ 0x00001592
+_crc16_ccitt .equ 0x00002449
  .public _check
-_check .equ 0x00001619
+_check .equ 0x000024d0
  .public _Xmodem
-_Xmodem .equ 0x000016fb
+_Xmodem .equ 0x000025b2
  .public _XmodemSend
-_XmodemSend .equ 0x00001ab6
+_XmodemSend .equ 0x0000296d
 ;SECTION NAME = .bss
+ .public _i2c_downloader_ctrl
+_i2c_downloader_ctrl .equ 0x000faa38
+ .public _downloader_iica0_slave_status_flag
+_downloader_iica0_slave_status_flag .equ 0x000faa4a
+ .public _downloader_iica0_rx_cnt
+_downloader_iica0_rx_cnt .equ 0x000faa4c
+ .public _downloader_iica0_tx_cnt
+_downloader_iica0_tx_cnt .equ 0x000faa4e
 ;SECTION NAME = .sbss
 ;SECTION NAME = .data
  .public _boot_counter_tick
@@ -119,22 +145,28 @@ _flash_memory_destination_address .equ 0x000f9f1a
 _g_flash_operation_progressing .equ 0x000f9f1e
  .public _g_app_required_update
 _g_app_required_update .equ 0x000f9f1f
+ .public _slv_write_start_flag
+_slv_write_start_flag .equ 0x000f9f20
+ .public _DataBuf
+_DataBuf .equ 0x000f9f21
+ .public _ResponseBuf
+_ResponseBuf .equ 0x000fa027
  .public _state
-_state .equ 0x000f9f20
+_state .equ 0x000fa12e
  .public _s_au8XmdBuf
-_s_au8XmdBuf .equ 0x000f9f24
+_s_au8XmdBuf .equ 0x000fa132
 ;SECTION NAME = .sdata
 ;SECTION NAME = .RLIB
 ;SECTION NAME = .SLIB
  .public __COM_memcpy_ff
-__COM_memcpy_ff .equ 0x00000280
+__COM_memcpy_ff .equ 0x00000427
  .public __COM_memset_f
-__COM_memset_f .equ 0x000002a1
+__COM_memset_f .equ 0x00000448
  .public __COM_sldiv
-__COM_sldiv .equ 0x000002bb
+__COM_sldiv .equ 0x00000462
  .public _printf_tiny
-_printf_tiny .equ 0x00000305
+_printf_tiny .equ 0x000004ac
  .public __REL_print_tiny
-__REL_print_tiny .equ 0x000003c0
+__REL_print_tiny .equ 0x00000567
  .public _isdigit
-_isdigit .equ 0x000009be
+_isdigit .equ 0x00000b65
